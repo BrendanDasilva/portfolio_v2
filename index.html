@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <title>Brendan Dasilva - Portfolio</title>
+  </head>
+  <body>
+    <div class="welcome-section">
+      <div class="slides">
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <div class="namecard">
+            <h1 class="name">Brendan Dasilva</h1>
+            <h4 class="name">Web Developer and Programmer</h4>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <p class="about">
+            I am a passionate web developer specializing in creating dynamic,
+            user-friendly websites and applications. With a strong foundation in
+            programming and a flair for design, I bring ideas to life through
+            powerful, engaging digital experiences.
+          </p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <p>Take a look at my portfolio!</p>
+        </div>
+
+        <div class="controls">
+          <button id="prev" disabled>&lt;</button>
+          <button id="next">&gt;</button>
+          <div id="lock" class="lock locked">🔒</div>
+        </div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navigation-bar">
+      <a href="#" class="nav-link">LinkedIn</a>
+      <a href="#" class="nav-link">GitHub</a>
+      <a href="#" class="nav-link">Resume</a>
+      <a href="#" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio-section">
+      <div class="portfolio-container">
+        <!-- Project 1 -->
+        <div class="portfolio-item fade-in">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-details">
+            <h3>Full Stack Assignment</h3>
+            <p>
+              Small description of the project - what techs it used and what is
+              useful to know as a viewer.
+            </p>
+            <button>View Live Site</button>
+            <button>View on GitHub</button>
+            <button class="expand-btn">⬇</button>
+          </div>
+        </div>
+        <!-- Expanded Section -->
+        <div class="expanded-section">
+          <!-- Tech Used Bar -->
+          <div class="tech-used">
+            <img
+              src="/assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+            <img
+              src="assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+            <img
+              src="assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+          </div>
+          <!-- Image Scroller -->
+          <div class="expanded-images">
+            <img
+              src="assets/images/default-image.png"
+              alt="Project Image"
+              class="image-item"
+            />
+            <img
+              src="assets/images/default-image.png"
+              alt="Project Image"
+              class="image-item"
+            />
+            <img
+              src="assets/images/default-image.png"
+              alt="Project Image"
+              class="image-item"
+            />
+            <img
+              src="assets/images/default-image.png"
+              alt="Project Image"
+              class="image-item"
+            />
+            <img
+              src="assets/images/default-image.png"
+              alt="Project Image"
+              class="image-item"
+            />
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio-item fade-in reverse">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-details">
+            <h3>Dough EV</h3>
+            <p>
+              In this collaborative project, our goal was to re-create an online
+              presence for a donut shop in London, ON. The site was initially
+              built on Squarespace but ultimatley needed an update to a more
+              suitable platform in Sociavore for its ease of use and its better
+              built-in ecommerce capabilities, specifically for a bakery.
+            </p>
+            <p>
+              My role was focused on customizing the website to align with
+              TheCastleRose's creative vision from the previous site, involving
+              a mix of Sociavore's native functionalities and supplimental
+              coding in CSS to tailor the site's aesthetics and user
+              interaction.
+            </p>
+            <button>View Live Site</button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="portfolio-item fade-in">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-details">
+            <h3>Trapper Keeper</h3>
+            <p>
+              This summer project was a personal initiative I worked on between
+              semesters to enhance my skills in React and prepare for the
+              upcoming semester. The project features a collection of functional
+              apps including a To-Do List, Notes, Weather Tracker, Pomodoro
+              Timer, and more. Throughout this project, I explored various
+              aspects of React, state management, and UI/UX design, continually
+              refining my knowledge and practical coding skills.
+            </p>
+            <button>View on GitHub</button>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="portfolio-item fade-in reverse">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-details">
+            <h3>API Quiz Game</h3>
+            <p>
+              API Quiz Game is a dynamic, web-based trivia quiz application
+              designed to challenge users with a wide range of questions across
+              various categories and difficulties. Utilizing the Open Trivia
+              Database API, this interactive game fetches real-time questions to
+              ensure a fresh and engaging experience every time.
+            </p>
+            <button>View Live Site</button>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="portfolio-item fade-in">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-details">
+            <h3>Project Placeholder</h3>
+            <p>Placeholder text for the project description.</p>
+            <button>View on GitHub</button>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="portfolio-item fade-in reverse">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-details">
+            <h3>Apollo's On-Call</h3>
+            <p>
+              Apollo's On-Call Tutoring was a second year Advanced Web
+              Development project. We were tasked with designing and building a
+              functional tutoring website using HTML, CSS, JavaScript, PHP, and
+              SQL. This site features the ability for tutors to sign up and
+              create a profile, as well as a feature that triggers their
+              availability along with providing a video chat link to prospective
+              students. Students can visit the site, see what tutors are
+              available and fill out a quick form to request a session.
+            </p>
+            <button>View Live Site</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="assets/script.js"></script>
+  </body>
+</html>

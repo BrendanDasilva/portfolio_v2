@@ -1,0 +1,306 @@
+/*************************/
+/***** FONT IMPORTS *****/
+/*************************/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+/***************************/
+/***** WELCOME SECTION *****/
+/***************************/
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f4f4f4;
+  position: relative;
+}
+
+.namecard {
+  max-width: 1600px;
+  width: 90%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+h1.name {
+  font-size: 3.5rem;
+}
+
+h4.name {
+  font-size: 2rem;
+}
+
+.name,
+.about {
+  text-align: left;
+  max-width: 1600px;
+  box-sizing: border-box;
+}
+
+.about {
+  padding: 50px;
+}
+
+.slides {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 80%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: #e1e1e1;
+  transition: transform 0.5s ease-in-out;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 80px;
+  max-width: 1600px;
+  width: 90%;
+  height: 10px;
+  background: #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background: #4caf50;
+  transition: width 0.5s ease-in-out;
+}
+
+.controls {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.lock {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.lock.locked {
+  color: red;
+}
+
+.lock.unlocked {
+  color: green;
+}
+
+/*************************/
+/******** NAV BAR ********/
+/*************************/
+.navigation-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 40px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/*****************************/
+/***** PORTFOLIO SECTION *****/
+/*****************************/
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-section {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.portfolio-container {
+  max-width: 1600px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.portfolio-item {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  gap: 60px;
+  background: #fff;
+  border-top: 2px solid #ddd; /* Border on the top */
+  border-left: 2px solid #ddd; /* Border on the left */
+  box-shadow: 8px 8px 0px black; /* Solid black shadow on right and bottom */
+  padding: 20px; /* Padding inside items */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.portfolio-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.portfolio-image {
+  flex: 3;
+  height: 450px;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.portfolio-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.portfolio-details h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.portfolio-details p {
+  font-size: 1rem;
+  line-height: 2;
+  margin: 0;
+}
+
+.portfolio-details button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.portfolio-details button:hover {
+  background-color: #0056b3;
+}
+
+/********** Expand Section **********/
+.expand-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.expand-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Tech Used Bar */
+.tech-used {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 20px;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tech Icons */
+.tech-icon {
+  width: 40px; /* Icon size */
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Expanded Section */
+.expanded-section {
+  max-height: 0; /* Start collapsed */
+  overflow: hidden;
+  margin-top: 20px;
+  background: #f4f4f4;
+  padding: 0; /* Remove padding initially */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.expanded-section.open {
+  max-height: 500px;
+  padding: 20px;
+}
+
+.expanded-images {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.image-item {
+  flex: 0 0 auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+}
