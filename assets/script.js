@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   expandButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const portfolioItem = button.closest(".portfolio-item");
-      const expandedSection = portfolioItem.nextElementSibling;
+      const expandedSection = portfolioItem.querySelector(".expanded-section");
 
       // Toggle the 'open' class for smooth roll-in
       if (expandedSection.classList.contains("open")) {
