@@ -7,70 +7,165 @@
     <title>Brendan Dasilva - Portfolio</title>
   </head>
   <body>
+    <!-- WELCOME SECTION -->
     <div class="welcome-section">
-      <div class="slides">
-        <!-- Slide 1 -->
-        <div class="slide active">
-          <div class="namecard">
-            <h1 class="name">Brendan Dasilva</h1>
-            <h4 class="name">Web Developer and Programmer</h4>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="slide">
-          <p class="about">
+      <!-- Introduction Slide -->
+      <div class="slide" id="introduction">
+        <div class="namecard">
+          <h1 class="intro">Brendan Dasilva</h1>
+          <h4 class="intro">Web Developer and Programmer</h4>
+          <h5 class="intro">
             I am a passionate web developer specializing in creating dynamic,
             user-friendly websites and applications. With a strong foundation in
             programming and a flair for design, I bring ideas to life through
             powerful, engaging digital experiences.
-          </p>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="slide">
-          <p>Take a look at my portfolio!</p>
-        </div>
-
-        <div class="controls">
-          <button id="prev" disabled>&lt;</button>
-          <button id="next">&gt;</button>
-          <div id="lock" class="lock locked">🔒</div>
+          </h5>
         </div>
       </div>
-      <div class="progress-bar">
-        <div class="progress"></div>
+
+      <!-- About Slide -->
+      <div class="slide" id="about">
+        <div class="about">
+          <p>
+            In 2022, I transitioned from a decade in the construction industry,
+            first as an electrician and later as a Purchasing Coordinator, to
+            pursue my passion for programming. Fascinated by computers and video
+            games growing up, I knew programming would lead me to a fulfilling
+            career. Now finishing up my third year of study at George Brown
+            College in Computer Programming and Analysis, I’m thrilled about
+            what’s ahead. When not coding, I enjoy spending time with my wife,
+            our three cats, watching wrestling, or playing video games.
+          </p>
+          <img
+            src="assets/images/default-image.png"
+            alt="Profile Image"
+            class="about-image"
+          />
+        </div>
+      </div>
+
+      <!-- Contact Slide -->
+      <div class="slide" id="contact">
+        <div class="contact-message">
+          <p>
+            Take a look at my portfolio below and if you have any questions or
+            inquiries, feel free to reach out to me at
+            <a href="mailto:brendan.dasilva@gmail.com"
+              >brendan.dasilva@gmail.com</a
+            >.
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- NAVIGATION BAR -->
     <nav class="navigation-bar">
-      <a href="#" class="nav-link">LinkedIn</a>
+      <a href="#introduction" class="nav-link" data-slide="introduction"
+        >Introduction</a
+      >
+      <a href="#about" class="nav-link" data-slide="about">About</a>
+      <a href="#portfolio" class="nav-link" data-scroll="portfolio"
+        >Portfolio</a
+      >
+      <a href="#contact" class="nav-link" data-slide="contact">Contact</a>
+      <a href="#" class="nav-link">Linkedin</a>
       <a href="#" class="nav-link">GitHub</a>
-      <a href="#" class="nav-link">Resume</a>
-      <a href="#" class="nav-link">Contact</a>
     </nav>
 
     <!-- PORTFOLIO SECTION -->
-    <section class="portfolio-section">
+    <section id="portfolio" class="portfolio-section">
       <div class="portfolio-container">
         <!-- Project 1 -->
         <div class="portfolio-item fade-in">
           <div class="portfolio-main">
             <div class="portfolio-image"></div>
             <div class="portfolio-details">
-              <h3>Full Stack Assignment</h3>
+              <h3>Employee Management Web Application (Full Stack - MERN)</h3>
+              <div class="tech-used">
+                <img
+                  src="/assets/images/html-file.png"
+                  alt="HTML Icon"
+                  class="tech-icon"
+                />
+                <img
+                  src="/assets/images/css-file.png"
+                  alt="HTML Icon"
+                  class="tech-icon"
+                />
+                <img
+                  src="/assets/images/javascript.png"
+                  alt="HTML Icon"
+                  class="tech-icon"
+                />
+                <img
+                  src="/assets/images/react.png"
+                  alt="HTML Icon"
+                  class="tech-icon"
+                />
+              </div>
               <p>
-                Small description of the project - what techs it used and what
-                is useful to know as a viewer.
+                This was a project for Full Stack Development using the MERN
+                stack. I created a simple employee management webpage which
+                includes the ability to register and login as a user and manage
+                the addition, updating, deleting and searching of employees.
               </p>
-              <button class="portfolio-button">View Live Site</button>
-              <button class="portfolio-button">View on GitHub</button>
+              <div class="portfolio-buttons">
+                <a
+                  href="https://comp3123-101447806-frontend-cb4568212bc5.herokuapp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button class="portfolio-button">View Live Site</button>
+                </a>
+                <a
+                  href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button class="portfolio-button">View on GitHub</button>
+                </a>
+              </div>
               <button class="expand-btn">⬇</button>
             </div>
           </div>
+
           <!-- Expanded Section -->
           <div class="expanded-section">
+            <div class="expanded-images">
+              <img
+                src="assets/images/fullstack2.png"
+                alt="Project Image"
+                class="image-item"
+              />
+              <img
+                src="assets/images/fullstack3.png"
+                alt="Project Image"
+                class="image-item"
+              />
+              <img
+                src="assets/images/fullstack4.png"
+                alt="Project Image"
+                class="image-item"
+              />
+              <img
+                src="assets/images/fullstack5.png"
+                alt="Project Image"
+                class="image-item"
+              />
+              <img
+                src="assets/images/fullstack6.png"
+                alt="Project Image"
+                class="image-item"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio-item fade-in reverse">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-details">
+            <h3>Dough EV</h3>
             <div class="tech-used">
               <img
                 src="/assets/images/html-file.png"
@@ -88,41 +183,6 @@
                 class="tech-icon"
               />
             </div>
-            <div class="expanded-images">
-              <img
-                src="assets/images/default-image.png"
-                alt="Project Image"
-                class="image-item"
-              />
-              <img
-                src="assets/images/default-image.png"
-                alt="Project Image"
-                class="image-item"
-              />
-              <img
-                src="assets/images/default-image.png"
-                alt="Project Image"
-                class="image-item"
-              />
-              <img
-                src="assets/images/default-image.png"
-                alt="Project Image"
-                class="image-item"
-              />
-              <img
-                src="assets/images/default-image.png"
-                alt="Project Image"
-                class="image-item"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="portfolio-item fade-in reverse">
-          <div class="portfolio-image"></div>
-          <div class="portfolio-details">
-            <h3>Dough EV</h3>
             <p>
               In this collaborative project, our goal was to re-create an online
               presence for a donut shop in London, ON. The site was initially
@@ -137,7 +197,16 @@
               coding in CSS to tailor the site's aesthetics and user
               interaction.
             </p>
-            <button class="portfolio-button">View Live Site</button>
+            <div class="portfolio-buttons">
+              <a
+                href="https://doughev.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="portfolio-button">View Live Site</button>
+              </a>
+            </div>
+            <button class="expand-btn">⬇</button>
           </div>
         </div>
 
@@ -161,24 +230,24 @@
               <button class="expand-btn">⬇</button>
             </div>
           </div>
+          <div class="tech-used">
+            <img
+              src="/assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+            <img
+              src="/assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+            <img
+              src="/assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+          </div>
           <div class="expanded-section">
-            <div class="tech-used">
-              <img
-                src="/assets/images/html-file.png"
-                alt="HTML Icon"
-                class="tech-icon"
-              />
-              <img
-                src="/assets/images/html-file.png"
-                alt="HTML Icon"
-                class="tech-icon"
-              />
-              <img
-                src="/assets/images/html-file.png"
-                alt="HTML Icon"
-                class="tech-icon"
-              />
-            </div>
             <div class="expanded-images">
               <img
                 src="assets/images/default-image.png"
@@ -240,24 +309,24 @@
               <button class="expand-btn">⬇</button>
             </div>
           </div>
+          <div class="tech-used">
+            <img
+              src="/assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+            <img
+              src="/assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+            <img
+              src="/assets/images/html-file.png"
+              alt="HTML Icon"
+              class="tech-icon"
+            />
+          </div>
           <div class="expanded-section">
-            <div class="tech-used">
-              <img
-                src="/assets/images/html-file.png"
-                alt="HTML Icon"
-                class="tech-icon"
-              />
-              <img
-                src="/assets/images/html-file.png"
-                alt="HTML Icon"
-                class="tech-icon"
-              />
-              <img
-                src="/assets/images/html-file.png"
-                alt="HTML Icon"
-                class="tech-icon"
-              />
-            </div>
             <div class="expanded-images">
               <img
                 src="assets/images/default-image.png"
@@ -308,6 +377,11 @@
         </div>
       </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Brendan Dasilva</p>
+    </footer>
     <script src="assets/script.js"></script>
   </body>
 </html>

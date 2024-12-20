@@ -1,123 +1,86 @@
 /**************************************************/
-/***** FONT IMPORTS *****/
+/****************** FONT IMPORTS ******************/
 /**************************************************/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body {
   margin: 0;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  line-height: 2;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /**************************************************/
-/***** WELCOME SECTION *****/
+/**************** WELCOME SECTION *****************/
 /**************************************************/
 .welcome-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 85vh;
   width: 100vw;
   background-color: #f4f4f4;
   position: relative;
-}
-
-.namecard {
-  max-width: 1600px;
-  width: 90%;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-h1.name {
-  font-size: 3.5rem;
-}
-
-h4.name {
-  font-size: 2rem;
-}
-
-.name,
-.about {
-  text-align: left;
-  max-width: 1600px;
-  box-sizing: border-box;
-}
-
-.about {
-  padding: 50px;
-}
-
-.slides {
-  position: relative;
-  display: flex;
   overflow: hidden;
-  width: 100%;
-  height: 80%;
 }
 
 .slide {
-  flex: 0 0 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  background-color: #e1e1e1;
-  transition: transform 0.5s ease-in-out;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.progress-bar {
-  position: absolute;
-  bottom: 80px;
+.slide.active {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide.inactive {
+  display: flex;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.namecard,
+.about,
+.contact-message {
   max-width: 1600px;
   width: 90%;
-  height: 10px;
-  background: #ccc;
-  overflow: hidden;
+  text-align: left;
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
-.progress {
-  width: 0;
-  height: 100%;
-  background: #4caf50;
-  transition: width 0.5s ease-in-out;
-}
-
-.controls {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
+.about {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  width: 90%;
 }
 
-.welcome-section button {
-  border: none;
-  padding: 10px;
-  font-size: 1.5rem;
-  background: #007bff;
-  color: white;
-  cursor: pointer;
+h1.intro {
+  font-size: 3.5rem;
 }
 
-.welcome-section button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
+h4.intro {
+  font-size: 2rem;
 }
 
-.lock {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.lock.locked {
-  color: red;
-}
-
-.lock.unlocked {
-  color: green;
+h5.intro {
+  font-size: 1rem;
 }
 
 /**************************************************/
@@ -125,7 +88,10 @@ h4.name {
 /**************************************************/
 .navigation-bar {
   display: flex;
+  width: 100%;
   justify-content: center;
+  position: relative;
+  top: 0;
   align-items: center;
   background-color: #ffffff;
   padding: 40px 0;
@@ -139,7 +105,7 @@ h4.name {
   font-size: 1.5rem;
   color: black;
   text-decoration: none;
-  margin: 0 40px;
+  margin: 0 20px;
   padding: 10px 15px;
   font-weight: 500;
   border: 1px solid black;
@@ -147,9 +113,17 @@ h4.name {
   position: relative;
   overflow: hidden;
   transition: all 0.2s ease-in;
+  text-transform: uppercase;
   cursor: pointer;
   z-index: 1;
   background-color: white;
+  letter-spacing: 0.05em;
+}
+
+.nav-link {
+  font-size: 1rem;
+  width: 150px;
+  text-align: center;
 }
 
 .nav-link:before,
@@ -264,6 +238,7 @@ h4.name {
   padding: 40px;
   overflow: hidden;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .portfolio-main {
@@ -277,8 +252,8 @@ h4.name {
 }
 
 .portfolio-image {
-  flex: 3;
-  height: 450px;
+  flex: 2.5;
+  height: 500px;
   background-color: #ccc;
   background-size: cover;
   background-position: center;
@@ -298,8 +273,39 @@ h4.name {
 
 .portfolio-details p {
   font-size: 1rem;
-  line-height: 2;
   margin: 0;
+}
+
+.portfolio-button {
+  font-size: 1rem;
+  margin: 0;
+  width: 100%;
+}
+
+.portfolio-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: 10px;
+  gap: 25px;
+}
+
+/* Tech Used Bar */
+.tech-used {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tech Icons */
+.tech-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .expand-btn {
@@ -333,25 +339,6 @@ h4.name {
   padding: 20px;
 }
 
-/* Tech Used Bar */
-.tech-used {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  margin-bottom: 20px;
-  padding: 25px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Tech Icons */
-.tech-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
 .expanded-images {
   display: flex;
   gap: 20px;
@@ -360,7 +347,20 @@ h4.name {
 
 .image-item {
   flex: 0 0 auto;
-  width: 500px;
-  height: 500px;
+  width: 525px;
+  height: 350px;
   object-fit: cover;
+}
+
+/**************************************************/
+/******************** FOOTER **********************/
+/**************************************************/
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
 }

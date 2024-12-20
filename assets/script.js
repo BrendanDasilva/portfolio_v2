@@ -1,51 +1,38 @@
-const slides = document.querySelectorAll(".slide");
-const progressBar = document.querySelector(".progress");
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
-const lockIcon = document.getElementById("lock");
+// Welcome Section Slides Behavior
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".nav-link");
+  const slides = document.querySelectorAll(".slide");
 
-let currentSlide = 0;
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const targetSlide = button.getAttribute("data-slide");
+      const targetScroll = button.getAttribute("data-scroll");
 
-function updateSlides() {
-  slides.forEach((slide, index) => {
-    slide.style.transform = `translateX(-${currentSlide * 100}%)`;
-    if (index === currentSlide) {
-      slide.style.overflow = index === slides.length - 1 ? "auto" : "hidden";
-    }
+      if (targetSlide) {
+        slides.forEach((slide) => {
+          if (slide.id === targetSlide) {
+            slide.classList.add("active");
+            slide.classList.remove("inactive");
+          } else {
+            slide.classList.remove("active");
+            slide.classList.add("inactive");
+          }
+        });
+      }
+
+      if (targetScroll) {
+        document
+          .getElementById(targetScroll)
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    });
   });
 
-  // Update progress bar
-  progressBar.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
-
-  // Update buttons
-  prevButton.disabled = currentSlide === 0;
-  nextButton.disabled = currentSlide === slides.length - 1;
-
-  // Handle lock icon
-  if (currentSlide === slides.length - 2) {
-    lockIcon.classList.remove("locked");
-    lockIcon.classList.add("unlocked");
-    lockIcon.textContent = "🔓";
-  } else {
-    lockIcon.classList.remove("unlocked");
-    lockIcon.classList.add("locked");
-    lockIcon.textContent = "🔒";
-  }
-}
-
-// Navigation button events
-prevButton.addEventListener("click", () => {
-  if (currentSlide > 0) currentSlide--;
-  updateSlides();
+  // Show the introduction slide by default
+  document.getElementById("introduction").classList.add("active");
+  document.getElementById("introduction").classList.remove("inactive");
 });
-
-nextButton.addEventListener("click", () => {
-  if (currentSlide < slides.length - 1) currentSlide++;
-  updateSlides();
-});
-
-// Initialize
-updateSlides();
 
 // Fade-in for portfolio
 document.addEventListener("DOMContentLoaded", () => {
