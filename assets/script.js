@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".nav-link");
   const slides = document.querySelectorAll(".slide");
 
+  // Set initial state for slides
+  slides.forEach((slide) => {
+    if (!slide.classList.contains("active")) {
+      slide.classList.add("inactive");
+    }
+  });
+
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
@@ -30,8 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Show the introduction slide by default
-  document.getElementById("introduction").classList.add("active");
-  document.getElementById("introduction").classList.remove("inactive");
+  const introSlide = document.getElementById("introduction");
+  introSlide.classList.add("active");
+  introSlide.classList.remove("inactive");
 });
 
 // Fade-in for portfolio
@@ -48,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.1, // Trigger when 10% of the item is visible
+      threshold: 0.2, // Trigger when 20% of the item is visible
     }
   );
 
@@ -63,16 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   expandButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      const expanded = button.getAttribute("aria-expanded") === "true" || false;
+      button.setAttribute("aria-expanded", !expanded);
+
+      // Toggle the expanded section (if applicable)
       const portfolioItem = button.closest(".portfolio-item");
       const expandedSection = portfolioItem.querySelector(".expanded-section");
-
-      // Toggle the 'open' class for smooth roll-in
-      if (expandedSection.classList.contains("open")) {
-        expandedSection.classList.remove("open");
-        button.textContent = "⬇"; // Reset button arrow
-      } else {
-        expandedSection.classList.add("open");
-        button.textContent = "⬆"; // Change button arrow to collapse
+      if (expandedSection) {
+        expandedSection.classList.toggle("open");
       }
     });
   });
