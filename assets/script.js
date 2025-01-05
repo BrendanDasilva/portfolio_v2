@@ -83,3 +83,59 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// parralax effect for the portfolio image
+// document.addEventListener("DOMContentLoaded", () => {
+//   new Rellax(".rellax");
+// });
+
+// modals for expanded section images
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".close");
+
+  // Ensure the modal is hidden initially
+  modal.style.display = "none";
+
+  document.querySelectorAll(".image-item, .portfolio-image").forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.style.backgroundImage
+        ? img.style.backgroundImage.slice(5, -2)
+        : img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
+// back to top button
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  // Show or hide the button based on scroll position
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1000) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  // Scroll to the top of the page when the button is clicked
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});

@@ -28,7 +28,7 @@ body {
   justify-content: center;
   height: 85vh;
   width: 100vw;
-  background-color: #f4f4f4;
+  background-color: #f5efe7;
   position: relative;
   overflow: hidden;
 }
@@ -63,7 +63,7 @@ body {
 .namecard,
 .about,
 .contact-message {
-  max-width: 1600px;
+  max-width: 1400px;
   width: 90%;
   text-align: left;
   box-sizing: border-box;
@@ -243,7 +243,7 @@ h5.intro {
 }
 
 .portfolio-container {
-  max-width: 1600px;
+  max-width: 1400px;
   width: 90%;
   margin: 50px auto 0;
   display: flex;
@@ -272,6 +272,7 @@ h5.intro {
 
 .subtitle {
   margin: 0;
+  margin-top: -10px;
 }
 
 .portfolio-item.reverse .portfolio-main {
@@ -326,14 +327,12 @@ h5.intro {
   align-items: center;
   gap: 50px;
   padding: 20px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Tech Icons */
 .tech-icon {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -348,7 +347,7 @@ h5.intro {
   margin-top: 20px;
 }
 
-/* @keyframes shake {
+@keyframes shake {
   0%,
   100% {
     transform: rotate(0deg);
@@ -362,7 +361,7 @@ h5.intro {
   75% {
     transform: rotate(10deg);
   }
-} */
+}
 
 @keyframes shake-down {
   0%,
@@ -442,6 +441,51 @@ h5.intro {
   margin-bottom: 50px;
 }
 
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-item,
+.portfolio-image {
+  cursor: pointer;
+}
+
 /**************************************************/
 /******************** FOOTER **********************/
 /**************************************************/
@@ -453,4 +497,149 @@ h5.intro {
   position: relative;
   width: 100%;
   bottom: 0;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: white;
+  z-index: 1000;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 6px 6px 0px black;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+}
+
+/**************************************************/
+/***************** MEDIA QUERIES ******************/
+/**************************************************/
+
+/* Media query for screens 1000px and below */
+@media (max-width: 1200px) {
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+    margin: 0 10px;
+  }
+
+  .portfolio-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-image {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .portfolio-details {
+    width: 100%;
+  }
+
+  .portfolio-item.reverse .portfolio-main {
+    flex-direction: column;
+  }
+}
+
+/* Media query for about tab on screens 898px */
+@media (max-width: 898px) {
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+/* Media query for screens 850px and below */
+@media (max-width: 850px) {
+  .welcome-section {
+    width: 100%;
+    height: 700px;
+  }
+
+  .welcome-section h1.intro {
+    font-size: 2.5rem;
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+
+  .welcome-section h4.intro {
+    font-size: 1.5rem;
+  }
+
+  .welcome-section h5.intro {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+
+  .intro {
+    margin-top: 50px;
+    width: 90%;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about p {
+    margin-top: -25px;
+    font-size: 1rem;
+  }
+
+  .about-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-top: 50px;
+  }
+
+  .nav-link {
+    font-size: 0.55rem;
+    padding: 3px 6px;
+    margin: 0 5px;
+  }
+
+  .navigation-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+    margin: 5px;
+    flex: 1 1 30%;
+    text-align: center;
+  }
+
+  .portfolio-item {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 555px) {
+  .welcome-section {
+    height: 850px;
+  }
+
+  .about-image {
+    margin-bottom: 50px;
+  }
+
+  .tech-used {
+    gap: 25px;
+  }
 }
