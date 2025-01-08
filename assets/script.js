@@ -12,9 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
-      event.preventDefault();
       const targetSlide = button.getAttribute("data-slide");
       const targetScroll = button.getAttribute("data-scroll");
+
+      if (targetSlide || targetScroll) {
+        event.preventDefault(); // Prevent default behavior only for slide transitions and smooth scrolling
+      }
 
       if (targetSlide) {
         slides.forEach((slide) => {
@@ -83,11 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-// parralax effect for the portfolio image
-// document.addEventListener("DOMContentLoaded", () => {
-//   new Rellax(".rellax");
-// });
 
 // modals for expanded section images
 document.addEventListener("DOMContentLoaded", () => {
