@@ -4,94 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/crq1xar.css" />
     <title>Brendan Dasilva - Portfolio</title>
   </head>
   <body>
     <!-- WELCOME SECTION -->
     <div class="welcome-section">
       <!-- Introduction Slide -->
-      <div class="slide" id="introduction">
-        <div class="namecard">
-          <h1 class="intro">Brendan Dasilva</h1>
-          <h4 class="intro">Web Developer and Programmer</h4>
-          <h5 class="intro">
-            I am a passionate web developer specializing in creating dynamic,
-            user-friendly websites and applications. With a strong foundation in
-            programming and a flair for design, I bring ideas to life through
-            powerful, engaging digital experiences.
-          </h5>
+      <div id="introduction">
+        <div class="intro-container">
+          <div class="intro-text">
+            <h1 class="intro">Brendan Dasilva</h1>
+            <h4 class="intro">Web Developer & Programmer</h4>
+            <h5 class="intro">
+              I’m a junior web developer focused on creating dynamic,
+              user-friendly websites + applications. A recent grad of George
+              Brown, I have a solid foundation in multiple languages such as
+              CSMeow, JavaMeow, and MeowScript. When not coding, you can find me
+              trouble shooting the perfect cup of coffee and hanging out with my
+              cats.
+            </h5>
+          </div>
+          <div class="intro-image">
+            <img
+              src="assets/images/aboutbig.png"
+              alt="Profile Image"
+              class="about-image"
+            />
+          </div>
         </div>
-      </div>
 
-      <!-- About Slide -->
-      <div class="slide" id="about">
-        <div class="about">
-          <p>
-            In 2022, I transitioned from a decade in the construction industry,
-            first as an electrician and later as a Purchasing Coordinator, to
-            pursue my passion for programming. Fascinated by computers and video
-            games growing up, I knew programming would lead me to a fulfilling
-            career. Now finishing up my third year of study at George Brown
-            College in Computer Programming and Analysis, I’m thrilled about
-            what’s ahead. When not coding, I enjoy spending time with my wife,
-            our three cats, watching wrestling, or playing video games.
-          </p>
-          <img
-            src="assets/images/aboutbig.png"
-            alt="Profile Image"
-            class="about-image"
-          />
+        <!-- Languages & Skills Slide -->
+        <div class="slide" id="languages-skills">
+          <div class="skills-container">
+            <h1 class="intro">Languages & Skills</h1>
+            <p>meow meow meow</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Contact Slide -->
-      <div class="slide" id="contact">
-        <div class="contact-message">
-          <h3>
-            Take a look at my portfolio below and if you have any questions or
-            inquiries, feel free to reach out to me at
-            <a href="mailto:brendan.dasilva@gmail.com"
-              >brendan.dasilva@gmail.com</a
-            >
-          </h3>
-          <h3>
-            You can also view my resume here:
-            <a
-              href="assets/Resume(needs updating).pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Resume Link</a
-            >
-          </h3>
-        </div>
+        <!-- Vertical Button -->
+        <button class="vertical-button" id="toggleButton">
+          Languages & Skills
+        </button>
+
+        <!-- NAVIGATION BAR -->
+        <nav class="navigation-bar">
+          <a href="#portfolio" class="nav-link" data-scroll="portfolio"
+            >Projects</a
+          >
+          <a
+            href="https://www.linkedin.com/in/brendan-dasilva-460b862a3/"
+            class="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/BrendanDasilva"
+            class="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="mailto:brendan.dasilva@gmail.com"
+            class="nav-link"
+            data-slide="contact"
+            >Email</a
+          >
+        </nav>
       </div>
     </div>
-
-    <!-- NAVIGATION BAR -->
-    <nav class="navigation-bar">
-      <a href="#introduction" class="nav-link" data-slide="introduction"
-        >Introduction</a
-      >
-      <a href="#about" class="nav-link" data-slide="about">About</a>
-      <a href="#portfolio" class="nav-link" data-scroll="portfolio"
-        >Portfolio</a
-      >
-      <a href="#contact" class="nav-link" data-slide="contact">Contact</a>
-      <a
-        href="https://www.linkedin.com/in/brendan-dasilva-460b862a3/"
-        class="nav-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >LinkedIn</a
-      >
-      <a
-        href="https://github.com/BrendanDasilva"
-        class="nav-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >GitHub</a
-      >
-    </nav>
 
     <!-- PORTFOLIO SECTION -->
     <section id="portfolio" class="portfolio-section">
@@ -103,12 +86,9 @@
               class="portfolio-image"
               style="background-image: url('assets/images/fullstack1.png')"
             ></div>
-            <!-- <div class="portfolio-image rellax" data-rellax-speed="-2" style="background-image: url('assets/images/fullstack1.png');"></div> -->
             <div class="portfolio-details">
+              <h4 class="subtitle">Assignment</h4>
               <h3>Employee Management Web Application</h3>
-              <h4 class="subtitle">
-                School Project - Year 3: Full Stack - MERN
-              </h4>
               <div class="tech-used">
                 <img
                   src="/assets/images/html-file.png"
@@ -155,25 +135,40 @@
                 helped me gain hands-on experience with full stack development
                 and reinforced my understanding of the MERN stack.
               </p>
-              <div class="portfolio-buttons">
-                <!-- <a
-                  href="https://comp3123-101447806-frontend-cb4568212bc5.herokuapp.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button class="portfolio-button">View Live Site</button>
-                </a> -->
+
+              <!-- Expand Button -->
+              <div class="expand-btn-container">
+                <div class="expand-btn-group">
+                  <button class="expand-btn" aria-expanded="false">
+                    &#x25BC;
+                  </button>
+                  <span class="expand-text">View More</span>
+                </div>
                 <a
                   href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button class="portfolio-button">View on GitHub</button>
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
                 </a>
               </div>
+
+              <!-- Portfolio Button -->
+              <!-- <div class="portfolio-buttons">
+                <a
+                  href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
+                </a>
+              </div> -->
             </div>
           </div>
-          <button class="expand-btn" aria-expanded="false">&#x25BC;</button>
 
           <!-- Expanded Section -->
           <div class="expanded-section">
@@ -215,8 +210,8 @@
               style="background-image: url('assets/images/doughev.png')"
             ></div>
             <div class="portfolio-details">
+              <h4 class="subtitle">Client Project</h4>
               <h3>DoughEV - London</h3>
-              <h4 class="subtitle">Client Project - Sociavore Platform</h4>
 
               <div class="tech-used">
                 <img
@@ -305,8 +300,8 @@
               style="background-image: url('assets/images/tk-homepage2.png')"
             ></div>
             <div class="portfolio-details">
+              <h4 class="subtitle">Personal Project</h4>
               <h3>Trapper Keeper</h3>
-              <h4 class="subtitle">Personal Project - React.js</h4>
               <div class="tech-used">
                 <img
                   src="/assets/images/html-file.png"
@@ -414,8 +409,8 @@
               style="background-image: url('assets/images/capstone1.png')"
             ></div>
             <div class="portfolio-details">
+              <h4 class="subtitle">Capstone Project</h4>
               <h3>Restaurant Finder</h3>
-              <h4 class="subtitle">Capstone Project - Year 3</h4>
               <div class="tech-used">
                 <img
                   src="/assets/images/html-file.png"
@@ -505,8 +500,8 @@
               style="background-image: url('assets/images/mobile1.png')"
             ></div>
             <div class="portfolio-details">
+              <h4 class="subtitle">Assignment</h4>
               <h3>React Native App - Flooring Calculator</h3>
-              <h4 class="subtitle">School Project - Year 3</h4>
               <div class="tech-used">
                 <img
                   src="/assets/images/html-file.png"
@@ -584,8 +579,8 @@
               style="background-image: url('assets/images/quizgame.png')"
             ></div>
             <div class="portfolio-details">
+              <h4 class="subtitle">Personal Project</h4>
               <h3>API Quiz Game</h3>
-              <h4 class="subtitle">Personal Project - Using an API</h4>
               <div class="tech-used">
                 <img
                   src="/assets/images/html-file.png"
@@ -668,8 +663,8 @@
               style="background-image: url('assets/images/javaflightapp.png')"
             ></div>
             <div class="portfolio-details">
+              <h4 class="subtitle">Assignment</h4>
               <h3>JAVA FX Flight Reservation App</h3>
-              <h4 class="subtitle">School Project - Year 2</h4>
               <div class="tech-used">
                 <img
                   src="/assets/images/java.png"
@@ -766,8 +761,8 @@
               "
             ></div>
             <div class="portfolio-details">
+              <h4 class="subtitle">Assignment</h4>
               <h3>Tutor Booking Project</h3>
-              <h4 class="subtitle">School Project - Year 2</h4>
               <div class="tech-used">
                 <img
                   src="/assets/images/html-file.png"
@@ -868,6 +863,5 @@
     </button>
 
     <script src="assets/script.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script> -->
   </body>
 </html>

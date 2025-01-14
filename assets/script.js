@@ -1,48 +1,30 @@
 // Welcome Section Slides Behavior
 document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".nav-link");
-  const slides = document.querySelectorAll(".slide");
-
-  // Set initial state for slides
-  slides.forEach((slide) => {
-    if (!slide.classList.contains("active")) {
-      slide.classList.add("inactive");
-    }
-  });
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const targetSlide = button.getAttribute("data-slide");
-      const targetScroll = button.getAttribute("data-scroll");
-
-      if (targetSlide || targetScroll) {
-        event.preventDefault(); // Prevent default behavior only for slide transitions and smooth scrolling
-      }
-
-      if (targetSlide) {
-        slides.forEach((slide) => {
-          if (slide.id === targetSlide) {
-            slide.classList.add("active");
-            slide.classList.remove("inactive");
-          } else {
-            slide.classList.remove("active");
-            slide.classList.add("inactive");
-          }
-        });
-      }
-
-      if (targetScroll) {
-        document
-          .getElementById(targetScroll)
-          .scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
-
-  // Show the introduction slide by default
+  const toggleButton = document.getElementById("toggleButton");
   const introSlide = document.getElementById("introduction");
-  introSlide.classList.add("active");
-  introSlide.classList.remove("inactive");
+  const skillsSlide = document.getElementById("languages-skills");
+
+  toggleButton.addEventListener("click", () => {
+    const isActive = toggleButton.classList.contains("active");
+
+    if (isActive) {
+      // Switch to Introduction Slide
+      introSlide.classList.add("slide-in");
+      introSlide.classList.remove("slide-out");
+      skillsSlide.classList.add("slide-out");
+      skillsSlide.classList.remove("slide-in");
+      toggleButton.textContent = "Languages & Skills";
+    } else {
+      // Switch to Languages & Skills Slide
+      introSlide.classList.add("slide-out");
+      introSlide.classList.remove("slide-in");
+      skillsSlide.classList.add("slide-in");
+      skillsSlide.classList.remove("slide-out");
+      toggleButton.textContent = "About";
+    }
+
+    toggleButton.classList.toggle("active");
+  });
 });
 
 // Fade-in for portfolio
@@ -70,10 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // drop down for portfolio expanding
 document.addEventListener("DOMContentLoaded", () => {
-  const expandButtons = document.querySelectorAll(".expand-btn");
+  const expandButtons = document.querySelectorAll(".expand-btn, .expand-text");
 
-  expandButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+  expandButtons.forEach((element) => {
+    element.addEventListener("click", () => {
+      const button = element
+        .closest(".expand-btn-container")
+        .querySelector(".expand-btn");
       const expanded = button.getAttribute("aria-expanded") === "true" || false;
       button.setAttribute("aria-expanded", !expanded);
 
@@ -82,6 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const expandedSection = portfolioItem.querySelector(".expanded-section");
       if (expandedSection) {
         expandedSection.classList.toggle("open");
+      }
+
+      // Toggle the text between "View More" and "View Less"
+      const expandText = button.nextElementSibling;
+      if (expandText) {
+        expandText.textContent = expanded ? "View More" : "View Less";
       }
     });
   });
