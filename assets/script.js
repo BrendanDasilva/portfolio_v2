@@ -3,24 +3,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.getElementById("toggleButton");
   const introSlide = document.getElementById("introduction");
   const skillsSlide = document.getElementById("languages-skills");
+  const body = document.body;
 
   toggleButton.addEventListener("click", () => {
     const isActive = toggleButton.classList.contains("active");
 
     if (isActive) {
-      // Switch to Introduction Slide
-      introSlide.classList.add("slide-in");
+      // Slide out Languages & Skills, Slide in Introduction
       introSlide.classList.remove("slide-out");
-      skillsSlide.classList.add("slide-out");
+      introSlide.classList.add("slide-in");
       skillsSlide.classList.remove("slide-in");
+      skillsSlide.classList.add("slide-out");
       toggleButton.textContent = "Languages & Skills";
+      body.classList.remove("skills-active");
     } else {
-      // Switch to Languages & Skills Slide
-      introSlide.classList.add("slide-out");
+      // Slide out Introduction, Slide in Languages & Skills
       introSlide.classList.remove("slide-in");
-      skillsSlide.classList.add("slide-in");
+      introSlide.classList.add("slide-out");
       skillsSlide.classList.remove("slide-out");
+      skillsSlide.classList.add("slide-in");
       toggleButton.textContent = "About";
+      body.classList.add("skills-active");
     }
 
     toggleButton.classList.toggle("active");
@@ -45,8 +48,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  portfolioItems.forEach((item) => {
-    observer.observe(item);
+  portfolioItems.forEach((item, index) => {
+    if (index === 0) {
+      // Exclude the first portfolio item
+      item.classList.add("visible");
+    } else {
+      // Alternate fade-in direction
+      if (index % 2 === 0) {
+        item.classList.add("fade-in-left");
+      } else {
+        item.classList.add("fade-in-right");
+      }
+      observer.observe(item);
+    }
   });
 });
 

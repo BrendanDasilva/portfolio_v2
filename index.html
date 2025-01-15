@@ -10,70 +10,125 @@
   <body>
     <!-- WELCOME SECTION -->
     <div class="welcome-section">
-      <!-- Introduction Slide -->
-      <div id="introduction">
-        <div class="intro-container">
-          <div class="intro-text">
-            <h1 class="intro">Brendan Dasilva</h1>
-            <h4 class="intro">Web Developer & Programmer</h4>
-            <h5 class="intro">
-              I’m a junior web developer focused on creating dynamic,
-              user-friendly websites + applications. A recent grad of George
-              Brown, I have a solid foundation in multiple languages such as
-              CSMeow, JavaMeow, and MeowScript. When not coding, you can find me
-              trouble shooting the perfect cup of coffee and hanging out with my
-              cats.
-            </h5>
-          </div>
-          <div class="intro-image">
-            <img
-              src="assets/images/aboutbig.png"
-              alt="Profile Image"
-              class="about-image"
-            />
+      <!-- Slides Container -->
+      <div class="slides-container">
+        <!-- Introduction Slide -->
+        <div id="introduction" class="slide active">
+          <div class="intro-container">
+            <div class="intro-text">
+              <h1 class="intro">Brendan Dasilva</h1>
+              <h4 class="intro">Web Developer & Programmer</h4>
+              <h5 class="intro">
+                I’m a junior web developer focused on creating dynamic,
+                user-friendly websites + applications. A recent grad of George
+                Brown, I have a solid foundation in multiple languages such as
+                CSMeow, JavaMeow, and MeowScript. When not coding, you can find
+                me trouble shooting the perfect cup of coffee and hanging out
+                with my cats.
+              </h5>
+              <div class="intro-image-mobile">
+                <img
+                  src="assets/images/aboutbig.png"
+                  alt="Profile Image"
+                  class="about-image-mobile"
+                />
+              </div>
+            </div>
+            <div class="intro-image">
+              <img
+                src="assets/images/aboutbig.png"
+                alt="Profile Image"
+                class="about-image"
+              />
+            </div>
           </div>
         </div>
 
         <!-- Languages & Skills Slide -->
-        <div class="slide" id="languages-skills">
+        <div id="languages-skills" class="slide inactive">
           <div class="skills-container">
-            <h1 class="intro">Languages & Skills</h1>
-            <p>meow meow meow</p>
+            <h1 class="intro">Languages and Skills</h1>
+            <div class="skills-content">
+              <!-- Languages Column -->
+              <div class="skills-column">
+                <h3>Languages</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>Python</li>
+                  <li>Java</li>
+                </ul>
+              </div>
+              <!-- Technology Column -->
+              <div class="skills-column">
+                <h3>Technology</h3>
+                <ul>
+                  <li>MongoDB</li>
+                  <li>Express.js</li>
+                  <li>React.js</li>
+                  <li>React Native</li>
+                  <li>Angular</li>
+                  <li>Node.js</li>
+                </ul>
+              </div>
+              <!-- Skills Column -->
+              <div class="skills-column">
+                <h3>Skills</h3>
+                <ul>
+                  <li>
+                    Motivated self-starter capable of working independently and
+                    within a team
+                  </li>
+                  <li>
+                    Strong work ethic with the ability to adapt on the fly and
+                    critically think through problems
+                  </li>
+                  <li>
+                    Clear and thorough in written and verbal communication
+                  </li>
+                  <li>
+                    Ability to multi-task and rotate between tasks while keeping
+                    organized
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-
-        <!-- Vertical Button -->
-        <button class="vertical-button" id="toggleButton">
-          Languages & Skills
-        </button>
-
-        <!-- NAVIGATION BAR -->
-        <nav class="navigation-bar">
-          <a href="#portfolio" class="nav-link" data-scroll="portfolio"
-            >Projects</a
-          >
-          <a
-            href="https://www.linkedin.com/in/brendan-dasilva-460b862a3/"
-            class="nav-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            href="https://github.com/BrendanDasilva"
-            class="nav-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-          <a
-            href="mailto:brendan.dasilva@gmail.com"
-            class="nav-link"
-            data-slide="contact"
-            >Email</a
-          >
-        </nav>
       </div>
+
+      <!-- Vertical Button -->
+      <button class="vertical-button" id="toggleButton">
+        Languages & Skills
+      </button>
+
+      <!-- NAVIGATION BAR -->
+      <nav class="navigation-bar">
+        <a href="#portfolio" class="nav-link" data-scroll="portfolio"
+          >Projects</a
+        >
+        <a
+          href="https://www.linkedin.com/in/brendan-dasilva-460b862a3/"
+          class="nav-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com/BrendanDasilva"
+          class="nav-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        <a
+          href="mailto:brendan.dasilva@gmail.com"
+          class="nav-link"
+          data-slide="contact"
+          >Email</a
+        >
+      </nav>
     </div>
 
     <!-- PORTFOLIO SECTION -->
@@ -248,18 +303,27 @@
                 supplimental coding in CSS to tailor the site's aesthetics and
                 user interaction.
               </p>
-              <div class="portfolio-buttons">
+
+              <!-- Expand Button -->
+              <div class="expand-btn-container">
+                <div class="expand-btn-group">
+                  <button class="expand-btn" aria-expanded="false">
+                    &#x25BC;
+                  </button>
+                  <span class="expand-text">View More</span>
+                </div>
                 <a
-                  href="https://doughev.com/"
+                  href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button class="portfolio-button">View Live Site</button>
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
                 </a>
               </div>
             </div>
           </div>
-          <button class="expand-btn" aria-expanded="false">&#x25BC;</button>
 
           <div class="expanded-section">
             <div class="expanded-images">
@@ -337,18 +401,27 @@
                 various aspects of React, state management, and UI/UX design,
                 continually refining my knowledge and practical coding skills.
               </p>
-              <div class="portfolio-buttons">
+
+              <!-- Expand Button -->
+              <div class="expand-btn-container">
+                <div class="expand-btn-group">
+                  <button class="expand-btn" aria-expanded="false">
+                    &#x25BC;
+                  </button>
+                  <span class="expand-text">View More</span>
+                </div>
                 <a
-                  href="https://github.com/BrendanDasilva/trapperkeeperapp"
+                  href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button class="portfolio-button">View on GitHub</button>
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
                 </a>
               </div>
             </div>
           </div>
-          <button class="expand-btn" aria-expanded="false">&#x25BC;</button>
 
           <div class="expanded-section">
             <div class="expanded-images">
@@ -448,18 +521,27 @@
                 restaurant finder app that allowed users to search for
                 restaurants in their area, view menus, and make reservations.
               </p>
-              <div class="portfolio-buttons">
+
+              <!-- Expand Button -->
+              <div class="expand-btn-container">
+                <div class="expand-btn-group">
+                  <button class="expand-btn" aria-expanded="false">
+                    &#x25BC;
+                  </button>
+                  <span class="expand-text">View More</span>
+                </div>
                 <a
-                  href="https://github.com/BrendanDasilva/capstone-project"
+                  href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button class="portfolio-button">View on GitHub</button>
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
                 </a>
               </div>
             </div>
           </div>
-          <button class="expand-btn" aria-expanded="false">&#x25BC;</button>
 
           <div class="expanded-section">
             <div class="expanded-images">
@@ -537,18 +619,27 @@
                 second screen contains an about page with my student
                 information.
               </p>
-              <div class="portfolio-buttons">
+
+              <!-- Expand Button -->
+              <div class="expand-btn-container">
+                <div class="expand-btn-group">
+                  <button class="expand-btn" aria-expanded="false">
+                    &#x25BC;
+                  </button>
+                  <span class="expand-text">View More</span>
+                </div>
                 <a
-                  href="https://github.com/BrendanDasilva/React-Native-basic-app"
+                  href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button class="portfolio-button">View on GitHub</button>
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
                 </a>
               </div>
             </div>
           </div>
-          <button class="expand-btn" aria-expanded="false">&#x25BC;</button>
 
           <div class="expanded-section">
             <div class="expanded-images">
@@ -614,25 +705,27 @@
                 Trivia Database API, this interactive game fetches real-time
                 questions to ensure a fresh and engaging experience every time.
               </p>
-              <div class="portfolio-buttons">
+
+              <!-- Expand Button -->
+              <div class="expand-btn-container">
+                <div class="expand-btn-group">
+                  <button class="expand-btn" aria-expanded="false">
+                    &#x25BC;
+                  </button>
+                  <span class="expand-text">View More</span>
+                </div>
                 <a
-                  href="https://brendandasilva.github.io/Games/APIQuizGame/index.html"
+                  href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button class="portfolio-button">View Live Site</button>
-                </a>
-                <a
-                  href="https://github.com/BrendanDasilva/Games"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button class="portfolio-button">View on GitHub</button>
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
                 </a>
               </div>
             </div>
           </div>
-          <button class="expand-btn" aria-expanded="false">&#x25BC;</button>
 
           <div class="expanded-section">
             <div class="expanded-images">
@@ -697,18 +790,26 @@
                 details like their name and passport number, and checks to make
                 sure this information is properly filled out.
               </p>
-              <div class="portfolio-buttons">
+              <!-- Expand Button -->
+              <div class="expand-btn-container">
+                <div class="expand-btn-group">
+                  <button class="expand-btn" aria-expanded="false">
+                    &#x25BC;
+                  </button>
+                  <span class="expand-text">View More</span>
+                </div>
                 <a
-                  href="https://github.com/BrendanDasilva/JavaFX-FlightApp"
+                  href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button class="portfolio-button">View on GitHub</button>
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
                 </a>
               </div>
             </div>
           </div>
-          <button class="expand-btn" aria-expanded="false">&#x25BC;</button>
 
           <div class="expanded-section">
             <div class="expanded-images">
@@ -800,18 +901,27 @@
                 tutors are available and fill out a quick form to request a
                 session.
               </p>
-              <div class="portfolio-buttons">
+
+              <!-- Expand Button -->
+              <div class="expand-btn-container">
+                <div class="expand-btn-group">
+                  <button class="expand-btn" aria-expanded="false">
+                    &#x25BC;
+                  </button>
+                  <span class="expand-text">View More</span>
+                </div>
                 <a
                   href="https://github.com/BrendanDasilva/fullstackdev-I--frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button class="portfolio-button">View on GitHub</button>
+                  <button class="portfolio-button border-button">
+                    View on GitHub
+                  </button>
                 </a>
               </div>
             </div>
           </div>
-          <button class="expand-btn" aria-expanded="false">&#x25BC;</button>
 
           <div class="expanded-section">
             <div class="expanded-images">
