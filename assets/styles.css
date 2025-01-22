@@ -238,14 +238,15 @@ h5.intro {
 }
 
 .nav-link,
-.portfolio-button {
+.portfolio-button,
+.back-to-top {
   font-size: 1rem;
   width: 150px;
   text-align: center;
   color: black;
   text-decoration: none;
   margin: 0 20px;
-  padding: 5px 10px;
+  padding: 6px 8px;
   font-weight: 500;
   border: 4px solid black;
   box-shadow: 4px 4px 0px black;
@@ -450,19 +451,10 @@ h5.intro {
   margin: 0;
 }
 
-.portfolio-button {
-  font-size: 1rem;
-  margin: 0;
-  padding: 5px 10px;
+.github-button {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   width: 200px;
-}
-
-.portfolio-buttons {
-  display: flex;
-  flex-direction: column;
-  margin-top: auto;
-  margin-bottom: 10px;
-  gap: 25px;
+  padding: 10px 0;
 }
 
 /* Tech Used Bar */
@@ -592,6 +584,42 @@ h5.intro {
   display: flex;
   gap: 35px;
   overflow-x: auto;
+  padding-bottom: 25px;
+  scrollbar-color: #ef8952 transparent;
+  scroll-behavior: smooth;
+}
+
+.arrow {
+  position: absolute;
+  top: 77%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.expanded-section.open .arrow {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .image-item {
@@ -666,17 +694,12 @@ h5.intro {
 /* Back to Top Button */
 .back-to-top {
   display: none;
+  padding: 10px 0;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: white;
   z-index: 1000;
-  font-size: 18px;
-  text-transform: uppercase;
-  padding: 10px 15px;
-  cursor: pointer;
-  border: 4px solid black;
-  box-shadow: 4px 4px 0px black;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -714,6 +737,10 @@ h5.intro {
 
   .portfolio-item.reverse .portfolio-main {
     flex-direction: column;
+  }
+
+  .arrow {
+    top: 79%;
   }
 }
 
@@ -838,6 +865,64 @@ h5.intro {
     align-items: center;
   }
 
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    height: 500px;
+    box-sizing: border-box;
+    margin-top: -150px;
+  }
+
+  .skills-content {
+    flex-direction: column; /* Change to column layout */
+    gap: 20px;
+    width: 100%;
+  }
+
+  .skills-column ul {
+    display: none; /* Hide the list initially */
+    margin-top: 0;
+    transition: 0.5s ease-out;
+  }
+
+  .skills-column.active ul {
+    display: block; /* Show the list when the column is active */
+  }
+
+  .skills-column h3 {
+    cursor: pointer;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  .skills-column h3::after {
+    content: "▼"; /* Add dropdown indicator */
+    margin-left: 10px;
+    font-size: 1rem;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .skills-column.active h3::after {
+    transform: rotate(180deg); /* Rotate indicator when active */
+  }
+
+  #languages-skills h1.intro {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #ef8952;
+    padding: 10px 0;
+    z-index: 1; /* Ensure it stays on top */
+  }
+
   .navigation-bar {
     display: flex;
     flex-wrap: wrap;
@@ -860,6 +945,14 @@ h5.intro {
   .portfolio-container {
     margin-top: -25px;
     gap: 50px;
+  }
+
+  .left-arrow {
+    left: 8px;
+  }
+
+  .right-arrow {
+    right: 8px;
   }
 }
 
@@ -894,5 +987,17 @@ h5.intro {
 
   .tech-used {
     gap: 25px;
+  }
+
+  .arrow {
+    top: 82%;
+  }
+
+  .left-arrow {
+    left: 5px;
+  }
+
+  .right-arrow {
+    right: 5px;
   }
 }

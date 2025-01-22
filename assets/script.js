@@ -28,6 +28,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toggleButton.classList.toggle("active");
   });
+
+  // Accordion functionality for skills columns
+  const skillsHeaders = document.querySelectorAll(".skills-column h3");
+
+  skillsHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      const column = header.parentElement;
+      const isActive = column.classList.contains("active");
+
+      // Close all other columns
+      document.querySelectorAll(".skills-column").forEach((col) => {
+        col.classList.remove("active");
+      });
+
+      // Toggle the clicked column
+      if (!isActive) {
+        column.classList.add("active");
+      }
+    });
+  });
 });
 
 // Fade-in for portfolio
@@ -64,8 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// drop down for portfolio expanding
+// drop down for portfolio expanding + slide arrow buttons
 document.addEventListener("DOMContentLoaded", () => {
+  // Handle the expand button functionality
   const expandButtons = document.querySelectorAll(".expand-btn, .expand-text");
 
   expandButtons.forEach((element) => {
@@ -89,6 +110,31 @@ document.addEventListener("DOMContentLoaded", () => {
         expandText.textContent = expanded ? "View More" : "View Less";
       }
     });
+  });
+
+  // Handle the arrow button functionality for scrolling images
+  const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+  portfolioItems.forEach((item) => {
+    const expandedImages = item.querySelector(".expanded-images");
+    const leftArrow = item.querySelector(".left-arrow");
+    const rightArrow = item.querySelector(".right-arrow");
+
+    if (leftArrow && rightArrow && expandedImages) {
+      leftArrow.addEventListener("click", () => {
+        expandedImages.scrollBy({
+          left: -525, // Adjust this value based on your image width
+          behavior: "smooth",
+        });
+      });
+
+      rightArrow.addEventListener("click", () => {
+        expandedImages.scrollBy({
+          left: 525, // Adjust this value based on your image width
+          behavior: "smooth",
+        });
+      });
+    }
   });
 });
 
