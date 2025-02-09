@@ -143,26 +143,62 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
   const closeBtn = document.querySelector(".close");
+  const leftModalArrow = document.querySelector(".left-modal-arrow");
+  const rightModalArrow = document.querySelector(".right-modal-arrow");
+  let currentImageIndex = 0;
+  let currentImageList = [];
 
   // Ensure the modal is hidden initially
   modal.style.display = "none";
 
+  // Function to open the modal with the clicked image
+  function openModal(img) {
+    currentImageList = Array.from(
+      img
+        .closest(".portfolio-item")
+        .querySelectorAll(".image-item, .portfolio-image")
+    );
+    currentImageIndex = currentImageList.indexOf(img);
+    modal.style.display = "flex";
+    modalImg.src = img.style.backgroundImage
+      ? img.style.backgroundImage.slice(5, -2)
+      : img.src;
+  }
+
+  // Add event listeners to the image items and portfolio images
   document.querySelectorAll(".image-item, .portfolio-image").forEach((img) => {
-    img.addEventListener("click", () => {
-      modal.style.display = "flex";
-      modalImg.src = img.style.backgroundImage
-        ? img.style.backgroundImage.slice(5, -2)
-        : img.src;
-    });
+    img.addEventListener("click", () => openModal(img));
   });
 
+  // close the modal when the close button is clicked
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
+  // close the modal when clicking outside the modal content
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.style.display = "none";
+    }
+  });
+
+  // navigate to the previous image in the modal
+  leftModalArrow.addEventListener("click", () => {
+    if (currentImageIndex > 0) {
+      currentImageIndex--;
+      modalImg.src = currentImageList[currentImageIndex].style.backgroundImage
+        ? currentImageList[currentImageIndex].style.backgroundImage.slice(5, -2)
+        : currentImageList[currentImageIndex].src;
+    }
+  });
+
+  // navigate to the next image in the modal
+  rightModalArrow.addEventListener("click", () => {
+    if (currentImageIndex < currentImageList.length - 1) {
+      currentImageIndex++;
+      modalImg.src = currentImageList[currentImageIndex].style.backgroundImage
+        ? currentImageList[currentImageIndex].style.backgroundImage.slice(5, -2)
+        : currentImageList[currentImageIndex].src;
     }
   });
 });
@@ -171,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const backToTopBtn = document.getElementById("backToTopBtn");
 
-  // Show or hide the button based on scroll position
+  // show or hide the button based on scroll position
   window.addEventListener("scroll", () => {
     if (window.scrollY > 1000) {
       backToTopBtn.style.display = "block";
@@ -180,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Scroll to the top of the page when the button is clicked
+  // scroll to the top of the page when the button is clicked
   backToTopBtn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
