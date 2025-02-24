@@ -27,7 +27,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 1000px;
+  height: 1100px;
   width: 100vw;
   color: white;
   position: relative;
@@ -181,7 +181,7 @@ h5.intro {
 .skills-content {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+
   width: 1300px;
 }
 
@@ -244,7 +244,7 @@ h5.intro {
   width: 100%;
   max-width: 1400px;
   justify-content: flex-start;
-  margin-top: 370px;
+  margin-top: 400px;
 }
 
 .nav-link,
@@ -784,11 +784,9 @@ h5.intro {
 /**************************************************/
 /***************** MEDIA QUERIES ******************/
 /**************************************************/
-
-/* Media query for screens 1300px and below */
-@media (max-width: 1350px) {
+@media (max-width: 1400px) {
   .skills-content {
-    width: 1200px;
+    width: 1250px;
   }
 
   .left-modal-arrow {
@@ -800,14 +798,45 @@ h5.intro {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1350px) {
   .skills-content {
-    width: 1100px;
+    width: 1200px;
+  }
+
+  .navigation-bar {
+    margin-top: 425px;
   }
 }
 
-/* Media query for screens 1200px and below */
-@media (max-width: 1200px) {
+@media (max-width: 1275px) {
+  .about-image {
+    height: 350px;
+    width: 350px;
+  }
+  h1.intro {
+    font-size: 4.5rem;
+  }
+
+  h4.intro {
+    font-size: 1.5rem;
+  }
+
+  h5.intro {
+    font-size: 1rem;
+  }
+
+  .skills-content {
+    width: 1100px;
+  }
+
+  .skills-column h3 {
+    font-size: 1.25rem;
+  }
+
+  .skills-column ul li {
+    font-size: 0.9rem;
+  }
+
   .portfolio-main {
     flex-direction: column;
     align-items: center;
@@ -846,37 +875,22 @@ h5.intro {
   }
 }
 
-@media (max-width: 1150px) {
-  .about-image {
-    height: 350px;
-    width: 350px;
+@media (max-width: 1200px) {
+  .skills-content {
+    width: 1000px;
   }
-  h1.intro {
-    font-size: 4.1rem;
-  }
+}
 
-  h4.intro {
-    font-size: 1.25rem;
-  }
-
-  h5.intro {
-    font-size: 1rem;
-  }
-
+@media (max-width: 1100px) {
   .skills-content {
     width: 900px;
-  }
-
-  .skills-column h3 {
-    font-size: 1.25rem;
-  }
-
-  .skills-column ul li {
-    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 988px) {
+  #languages-skills h1.intro {
+    width: 50%;
+  }
   .skills-content {
     width: 800px;
   }
@@ -897,26 +911,11 @@ h5.intro {
   }
 }
 
-/* Media query for about tab on screens 898px */
-@media (max-width: 898px) {
-  #languages-skills h1.intro {
-    width: 45%;
-  }
-
-  .skills-content {
-    width: 700px;
-  }
-
-  .about p {
-    font-size: 1rem;
-  }
-}
-
 /* Media query for screens 850px and below */
 @media (max-width: 850px) {
   .welcome-section {
     width: 100%;
-    height: 1100px;
+    height: 1200px;
   }
 
   .welcome-section h1.intro {
@@ -1002,13 +1001,16 @@ h5.intro {
     display: block; /* show the list when the column is active */
   }
 
+  .skills-column.active ul li {
+    width: 150%;
+  }
+
   .skills-column h3 {
     cursor: pointer;
     position: relative;
     color: white;
     display: flex;
     align-items: center;
-    /* margin: 0; */
   }
 
   .skills-column h3:first-of-type {
@@ -1030,6 +1032,7 @@ h5.intro {
   #languages-skills h1.intro {
     width: 100%;
     text-align: center;
+    margin-top: -50px;
     margin-bottom: 20px;
     position: sticky;
     top: 0;
@@ -1095,7 +1098,11 @@ h5.intro {
   }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 680px) {
+  #languages-skills h1.intro {
+    width: 75%;
+    margin-top: -100px;
+  }
   .modal-arrow {
     height: 40px;
     width: 40px;
@@ -1111,12 +1118,8 @@ h5.intro {
 }
 
 @media (max-width: 585px) {
-  .welcome-section {
-    height: 1150px;
-  }
-
-  #languages-skills h1.intro {
-    width: 75%;
+  .skills-column.active ul li {
+    width: 160%;
   }
 
   .about-image-mobile {
@@ -1149,7 +1152,24 @@ h5.intro {
   }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 530px) {
+  #languages-skills h1.intro {
+    width: 100%;
+    margin-top: -150px;
+  }
+
+  .welcome-section {
+    height: 1300px;
+  }
+
+  .navigation-bar {
+    margin-top: 600px;
+  }
+
+  .intro {
+    margin-top: 50px;
+  }
+
   .about-image-mobile {
     height: 200px;
     width: 200px;
@@ -1162,5 +1182,36 @@ h5.intro {
 
   .expand-text {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 462px) {
+  #languages-skills h1.intro {
+    margin-top: -200px;
+  }
+  .welcome-section {
+    height: 1350px;
+  }
+  .navigation-bar {
+    margin-top: 650px;
+  }
+}
+
+@media (max-width: 425px) {
+  .skills-container {
+    align-items: flex-start;
+  }
+
+  .tech-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .expand-btn {
+    font-size: 1.4rem;
+  }
+
+  .expand-text {
+    font-size: 0.6rem;
   }
 }
