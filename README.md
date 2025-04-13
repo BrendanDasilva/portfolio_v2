@@ -40,7 +40,7 @@ Projects are displayed in categorized cards (Assignment, Capstone, etc.). Clicki
 
 ---
 
-## 💔 Footer
+## Footer
 
 The footer includes contact icons and a “Back to Top” button. It also features a personal touch:  
 > Brewed with HTML, CSS and JavaScript in Toronto, ON
